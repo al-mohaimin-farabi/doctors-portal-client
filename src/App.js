@@ -1,16 +1,12 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Home from './Pages/Home/Home/Home';
-import Appointment from './Pages/Appointment/Appointment/Appointment';
-import Login from './Pages/Login/Login/Login';
-import Register from './Pages/Login/Register/Register';
-import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home/Home";
+import Appointment from "./Pages/Appointment/Appointment/Appointment";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashbord";
 
 function App() {
   return (
@@ -30,6 +26,9 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
+            </PrivateRoute>
             <Route exact path="/">
               <Home />
             </Route>
